@@ -5,7 +5,7 @@ def handle_message(sender, subject, content, army):
         handle_J(subject, content, army[1])
     if sender == "John Doe <johndoe@gmail.com>":
         handle_P(subject, content, army[2])
-    elif sender == 'Sam McKay <mckaypable@gmail.com':
+    elif sender == 'Samuel McKay <mckaypable@gmail.com>':
 
         handle_S(subject, content, army[0])
     return
@@ -37,9 +37,7 @@ def handle_P(subject, content, P):
         
         
 def handle_S(subject, content, Hokage):
-    print("subject")
-
-    print(subject)
+    Hokage.setMessage(content)
     if subject == "gone":     
         ##Gone == 1
         Hokage.flip_logic(0, "gone")

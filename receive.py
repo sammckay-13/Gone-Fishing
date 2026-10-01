@@ -79,8 +79,6 @@ def delete_email(msg, subject, body, email_id, army): ##take email id of email t
     global mail
     mail.store(email_id, '+FLAGS', '\\Deleted')
     time.sleep(.5)
-    sender = msg["from"]
-    print(sender)
     handle.handle_message(msg['from'], subject, body, army)
     return
     

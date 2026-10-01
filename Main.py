@@ -25,7 +25,6 @@ class Frog(MDBoxLayout):
         
     def setMessage(self, newMessage): ##Change the message on the frog card
         self.message = ""
-        print("setMessage")
         for i in newMessage: ##typing text system
             self.message+=i
             time.sleep(.06)
@@ -34,7 +33,6 @@ class Frog(MDBoxLayout):
         self.source = newSource
 
     def flip_logic(self, person, location="none"):
-        print("flip")
 
         FitImages = []        
         for widget in self.walk():
@@ -107,7 +105,7 @@ class MyApp(MDApp):
         Window.size = (800, 580)
         ##Create shinobi info
         data = [
-            {"name": "Sam", "message": "Heading out! Be back in an hour!"},
+            {"name": "Samuel", "message": ""},
             {"name": "Jane", "message": ""},
             {"name": "John", "message": ""}
         ]
