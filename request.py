@@ -15,43 +15,43 @@ def request_API(army):
         message = get_s3_message()
         dump_s3_message()
         ##See if the name that is contained in the bucket is jenny, sam, or paul and then flip the necessary card.
-        if name.lower() == 'jenny' or name.lower() == 'jenny\'s':
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
-        elif name.lower() == 'paul' or name.lower() == 'paul\'s':
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
+        if name.lower() == 'john' or name.lower() == 'jane\'s':
+            handle.handle_message('janedoe@gmail.com', '', message, army)
+        elif name.lower() == 'john' or name.lower() == 'john\'s':
+            handle.handle_message('johndoe@gmail.com', '', message, army)
         elif name.lower() == 'sam' or name.lower() == 'sam\'s':
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
             
             
         elif any(keyword in name.lower() for keyword in ['sam jenny', 'sam\'s jenny\'s', 'sam and jenny', 'sam\'s and jenny\'s', 'sam and jenny\'s']):
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
+            handle.handle_message('janedoe@gmail.com', '', message, army)
             
         elif any(keyword in name.lower() for keyword in ['jenny sam', 'jenny\'s sam\'s', 'jenny and sam', 'jenny\'s and sam\'s', 'jenny and sam\'s']):
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
+            handle.handle_message('janedoe@gmail.com', '', message, army)
             
             
         elif any(keyword in name.lower() for keyword in ['sam paul', 'sam\'s paul\'s', 'sam and paul', 'sam\'s and paul\'s', 'sam and paul\'s']):
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
+            handle.handle_message('johndoe@gmail.com', '', message, army)
             
         elif any(keyword in name.lower() for keyword in ['paul sam', 'paul\'s sam\'s', 'paul and sam', 'paul\'s and sam\'s', 'paul and sam\'s']):
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
+            handle.handle_message('johndoe@gmail.com', '', message, army)
             
         elif any(keyword in name.lower() for keyword in ['jenny paul', 'jenny\'s paul\'s', 'jenny and paul', 'jenny\'s and paul\'s', 'jenny and paul\'s']):
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
+            handle.handle_message('janedoe@gmail.com', '', message, army)
+            handle.handle_message('johndoe@gmail.com', '', message, army)
             
         elif any(keyword in name.lower() for keyword in ['paul jenny', 'paul\'s jenny\'s', 'paul and sam', 'paul\'s and sam\'s', 'paul and sam\'s']):
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
+            handle.handle_message('janedoe@gmail.com', '', message, army)
+            handle.handle_message('johndoe@gmail.com', '', message, army)
         
         elif name.lower() == 'all' or name.lower() == 'all cards':
-            handle.handle_message('sammckay31@gmail.com', '', message, army)
-            handle.handle_message('thepaulmckay@gmail.com', '', message, army)
-            handle.handle_message('thejennymckay@gmail.com', '', message, army)
+            handle.handle_message('mckaypable@gmail.com', '', message, army)
+            handle.handle_message('johndoe@gmail.com', '', message, army)
+            handle.handle_message('janedoe@gmail.com', '', message, army)
             
         else:
             pass

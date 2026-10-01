@@ -45,7 +45,6 @@ def receive_mail(army):
         print(f"From: {msg['From']}")
         print(f"To: {msg['To']}")
         print(f"Subject: {subject}")
-        
 
         # Check if the email contains multiple parts (text, attachments, etc.)
         if msg.is_multipart():
@@ -65,12 +64,13 @@ def receive_mail(army):
             # Single-part email
             content_type = msg.get_content_type()
             body = msg.get_payload(decode=True).decode()
-            print("Message Body:")
-            print(body)
         
             delete_email(msg, subject, body, email_id, army)
 
+
         print("=" * 40)
+        delete_email(msg, subject, body, email_id, army)
+
     return
         
 
@@ -79,8 +79,9 @@ def delete_email(msg, subject, body, email_id, army): ##take email id of email t
     global mail
     mail.store(email_id, '+FLAGS', '\\Deleted')
     time.sleep(.5)
-
-    handle.handle_message(msg['from'], subject.lower(), str(body).lower(), army)
+    sender = msg["from"]
+    print(sender)
+    handle.handle_message(msg['from'], subject, body, army)
     return
     
 def logout(): ##This isn't working since there is an order issue 

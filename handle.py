@@ -1,11 +1,12 @@
 
-##I'm handling the if statment to determine who it is on this side because it'll be easier to read
-def handle_message(sender, subject, content, army):
-    if sender == "thejennymckay@gmail.com":
+##I'm handling the if statment to determine who it is on this side because it'll be easier to read. For safety reasons I'm obfuscating the emails for my parents
+def handle_message(sender, subject, content, army): 
+    if sender == "Jane Doe <janedoe@gmail.com>":
         handle_J(subject, content, army[1])
-    if sender == "thepaulmckay@gmail.com":
+    if sender == "John Doe <johndoe@gmail.com>":
         handle_P(subject, content, army[2])
-    elif sender == 'sammckay31@gmail.com':
+    elif sender == 'Sam McKay <mckaypable@gmail.com':
+
         handle_S(subject, content, army[0])
     return
         
@@ -36,8 +37,10 @@ def handle_P(subject, content, P):
         
         
 def handle_S(subject, content, Hokage):
-    Hokage.setMessage(content)
-    if subject == "gone":
+    print("subject")
+
+    print(subject)
+    if subject == "gone":     
         ##Gone == 1
         Hokage.flip_logic(0, "gone")
     elif subject == "home":
